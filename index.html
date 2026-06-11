@@ -43,6 +43,55 @@ nav {
 .nav-cta { color: var(--mid); }
 .nav-cta:hover { color: var(--sage); }
 
+
+/* ── MOBILE NAV ── */
+.nav-hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; margin-right: -8px;
+  flex-direction: column; gap: 5px; align-items: flex-end;
+}
+.nav-hamburger span {
+  display: block; height: 1.5px; background: var(--charcoal);
+  transition: all 0.25s ease;
+}
+.nav-hamburger span:nth-child(1) { width: 22px; }
+.nav-hamburger span:nth-child(2) { width: 16px; }
+.nav-hamburger span:nth-child(3) { width: 22px; }
+.nav-hamburger.open span:nth-child(1) { width: 22px; transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { width: 22px; transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-drawer {
+  display: none;
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 199;
+  background: rgba(250,248,245,0.98); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 1.5rem 2rem;
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.nav-drawer.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-drawer ul {
+  list-style: none; display: flex; flex-direction: column; gap: 0;
+}
+.nav-drawer ul li a {
+  display: block;
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--mid); text-decoration: none; font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.nav-drawer ul li:last-child a { border-bottom: none; }
+.nav-drawer ul li a:hover,
+.nav-drawer ul li a:active { color: var(--charcoal); }
+
 /* ── HERO ── */
 .hero {
   padding-top: 64px;
@@ -236,7 +285,8 @@ footer a:hover { color: white; }
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 0 1.25rem; }
-  .nav-links li:not(:last-child) { display: none; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-img { height: 72vw; min-height: 280px; }
   .hero-content { padding: 2.5rem 1.25rem 3rem; }
@@ -244,14 +294,13 @@ footer a:hover { color: white; }
   .form-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
   .agent-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .agent-photo { width: 100%; height: 280px; }
+  .agent-photo { width: 100%; height: 360px; object-position: top center; }
   .mills-banner { flex-direction: column; padding: 2rem; }
   section { padding: 5rem 1.25rem; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
   .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9,.g10,.g11,.g12 { grid-column: auto; grid-row: auto; aspect-ratio: 4/3; }
 }
 @media (max-width: 600px) {
-  .nav-links { display: none; }
   .gallery-grid { grid-template-columns: 1fr; }
   .hero-content { padding: 2rem 1.25rem 2.5rem; }
   .hero-address { font-size: clamp(34px, 9vw, 42px); }
@@ -262,7 +311,7 @@ footer a:hover { color: white; }
   .btn { padding: 14px 20px; font-size: 11px; width: 100%; text-align: center; display: block; }
   .hero-ctas { flex-direction: column; gap: 10px; }
   .mills-banner { padding: 1.5rem; }
-  .agent-photo { height: 240px; }
+  .agent-photo { height: 320px; object-position: top center; }
   .form-grid { gap: 2rem; }
   section { padding: 4rem 1.25rem; }
   .gallery-header { padding: 3.5rem 1.25rem 2rem; }
@@ -284,7 +333,22 @@ footer a:hover { color: white; }
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <ul>
+    <li><a href="#tour" class="drawer-link">Tour</a></li>
+    <li><a href="#details" class="drawer-link">Details</a></li>
+    <li><a href="#gallery" class="drawer-link">Gallery</a></li>
+    <li><a href="#story" class="drawer-link">Story</a></li>
+    <li><a href="#about" class="drawer-link">About</a></li>
+    <li><a href="#contact" class="drawer-link">Contact</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <div class="hero" id="home">
@@ -645,6 +709,40 @@ if (contactForm) {
     }
   });
 }
+
+/* ── MOBILE NAV DRAWER ── */
+const hamburger = document.getElementById('nav-hamburger');
+const drawer    = document.getElementById('nav-drawer');
+
+function openDrawer() {
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  drawer.classList.add('open');
+  drawer.removeAttribute('aria-hidden');
+}
+function closeDrawer() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden', 'true');
+}
+
+hamburger.addEventListener('click', function() {
+  drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+});
+
+// Close drawer when any link is tapped
+document.querySelectorAll('.drawer-link').forEach(function(link) {
+  link.addEventListener('click', closeDrawer);
+});
+
+// Close drawer on outside tap
+document.addEventListener('click', function(e) {
+  if (!hamburger.contains(e.target) && !drawer.contains(e.target)) {
+    closeDrawer();
+  }
+});
+
 </script>
 </body>
 </html>
