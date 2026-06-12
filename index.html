@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LNHRGJN07"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LNHRGJN07');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>234 Grant Street · Redlands, CA · Danitza Lloren</title>
-<meta name="description" content="Historic 1901 Craftsman Bungalow in South Redlands. 4 bed, 2 bath, 1,698 sq ft. Mills Act eligible. Listed by Danitza Lloren, DRE #02223236.">
-<meta property="og:title" content="234 Grant Street · Redlands, CA">
-<meta property="og:description" content="Historic 1901 Craftsman Bungalow in South Redlands. 4 bed, 2 bath · $684,000 · Mills Act eligible.">
-<meta property="og:image" content="images/ext_front.jpg">
+
+<!-- Primary SEO -->
+<title>Danitza Lloren · Redlands REALTOR® | 234 Grant Street For Sale</title>
+<meta name="description" content="Danitza Lloren, California REALTOR® and Redlands real estate agent. Currently listing 234 Grant Street — a historic 1901 Craftsman Bungalow in South Redlands. 4 bed, 2 bath, 1,275 sq ft. Mills Act eligible. DRE #02223236.">
+<meta name="keywords" content="Danitza Lloren, Danitza Lloren Realtor, Redlands Realtor, Redlands real estate agent, South Redlands homes for sale, 234 Grant Street Redlands, historic homes Redlands, Mills Act Redlands, Craftsman Bungalow Redlands, Nest Real Estate Redlands">
+<meta name="author" content="Danitza Lloren">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://danitzalloren.com/">
+
+<!-- Open Graph (Facebook, iMessage, LinkedIn) -->
+<meta property="og:title" content="Danitza Lloren · Redlands REALTOR® | 234 Grant Street For Sale">
+<meta property="og:description" content="Historic 1901 Craftsman Bungalow in South Redlands, CA. 4 bed · 2 bath · 1,275 sq ft · $684,000. Mills Act eligible. Listed by Danitza Lloren, DRE #02223236.">
+<meta property="og:image" content="https://danitzalloren.com/images/ext_front.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1067">
+<meta property="og:image:alt" content="234 Grant Street, Redlands CA — Historic Craftsman Bungalow">
+<meta property="og:url" content="https://danitzalloren.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Danitza Lloren Real Estate">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="234 Grant Street · Redlands, CA · $684,000">
+<meta name="twitter:description" content="Historic 1901 Craftsman Bungalow in South Redlands. 4 bed, 2 bath, 1,275 sq ft. Mills Act eligible. Listed by Danitza Lloren.">
+<meta name="twitter:image" content="https://danitzalloren.com/images/ext_front.jpg">
+
 <meta name="theme-color" content="#f7f3ed">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -294,7 +324,7 @@ footer a:hover { color: white; }
   .form-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
   .agent-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .agent-photo { width: 100%; height: 360px; object-position: top center; }
+  .agent-photo { width: 100%; height: 420px; object-position: top 5%; }
   .mills-banner { flex-direction: column; padding: 2rem; }
   section { padding: 5rem 1.25rem; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 3px; }
@@ -311,7 +341,7 @@ footer a:hover { color: white; }
   .btn { padding: 14px 20px; font-size: 11px; width: 100%; text-align: center; display: block; }
   .hero-ctas { flex-direction: column; gap: 10px; }
   .mills-banner { padding: 1.5rem; }
-  .agent-photo { height: 320px; object-position: top center; }
+  .agent-photo { height: 380px; object-position: top 5%; }
   .form-grid { gap: 2rem; }
   section { padding: 4rem 1.25rem; }
   .gallery-header { padding: 3.5rem 1.25rem 2rem; }
@@ -319,6 +349,74 @@ footer a:hover { color: white; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 </style>
+
+<!-- Structured Data: Real Estate Listing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "234 Grant Street, Redlands, CA 92373",
+  "description": "Historic 1901 Craftsman Bungalow in South Redlands. 4 bedrooms, 2 bathrooms, 1,275 sq ft. Located within the Smiley Park Historic and Scenic District. Mills Act eligible.",
+  "url": "https://danitzalloren.com/",
+  "datePosted": "2026-06-11",
+  "price": "684000",
+  "priceCurrency": "USD",
+  "image": [
+    "https://danitzalloren.com/images/ext_front.jpg",
+    "https://danitzalloren.com/images/living_room.jpg",
+    "https://danitzalloren.com/images/kitchen2.jpg"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "234 Grant Street",
+    "addressLocality": "Redlands",
+    "addressRegion": "CA",
+    "postalCode": "92373",
+    "addressCountry": "US"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "684000",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<!-- Structured Data: Real Estate Agent -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Danitza Lloren",
+  "url": "https://danitzalloren.com/",
+  "image": "https://danitzalloren.com/images/agent_headshot.jpg",
+  "description": "California REALTOR® and real estate agent serving Redlands and the Inland Empire. Over 10 years of experience in accounting and audit. Landlord, ADU specialist, Mills Act participant. DRE #02223236.",
+  "telephone": "+1-909-654-4711",
+  "email": "homes@danitzalloren.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Riverside",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Redlands"
+    },
+    {
+      "@type": "City",
+      "name": "Riverside"
+    }
+  ],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Nest Real Estate"
+  },
+  "hasCredential": "California DRE #02223236"
+}
+</script>
 </head>
 <body>
 
@@ -364,7 +462,7 @@ footer a:hover { color: white; }
     <div class="hero-stats">
       <div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-label">Beds</span></div>
       <div class="hero-stat"><span class="hero-stat-num">2</span><span class="hero-stat-label">Baths</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">1,698</span><span class="hero-stat-label">Sq Ft</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">1,275</span><span class="hero-stat-label">Sq Ft</span></div>
       <div class="hero-stat"><span class="hero-stat-num">1901</span><span class="hero-stat-label">Built</span></div>
     </div>
     <div class="hero-ctas">
@@ -462,7 +560,7 @@ footer a:hover { color: white; }
           <li><span class="detail-key">Bedrooms</span><span class="detail-val">4</span></li>
           <li><span class="detail-key">Bath 1</span><span class="detail-val">Full — tub &amp; shower</span></li>
           <li><span class="detail-key">Bath 2</span><span class="detail-val">Shower only</span></li>
-          <li><span class="detail-key">Living Area</span><span class="detail-val">1,698 sq ft</span></li>
+          <li><span class="detail-key">Living Area</span><span class="detail-val">1,275 sq ft</span></li>
           <li><span class="detail-key">Lot Size</span><span class="detail-val">7,000 sq ft / 0.16 ac</span></li>
           <li><span class="detail-key">Year Built</span><span class="detail-val">1901</span></li>
           <li><span class="detail-key">Style</span><span class="detail-val">Craftsman Bungalow</span></li>
@@ -488,7 +586,7 @@ footer a:hover { color: white; }
     <div class="features-grid">
       <div class="feature-item"><span class="feature-icon">🏛️</span><div class="feature-text">Historic Craftsman<small>1901 architecture</small></div></div>
       <div class="feature-item"><span class="feature-icon">🌳</span><div class="feature-text">Covered Front Porch<small>White picket fence</small></div></div>
-      <div class="feature-item"><span class="feature-icon">🔥</span><div class="feature-text">Wood-Burning Stove<small>Brick surround</small></div></div>
+      <div class="feature-item"><span class="feature-icon">🔥</span><div class="feature-text">Wood-Burning Fireplace<small>Brick surround</small></div></div>
       <div class="feature-item"><span class="feature-icon">☀️</span><div class="feature-text">Abundant Natural Light<small>Tall ceilings throughout</small></div></div>
       <div class="feature-item"><span class="feature-icon">🚗</span><div class="feature-text">2-Car Garage<small>Detached</small></div></div>
       <div class="feature-item"><span class="feature-icon">🌿</span><div class="feature-text">Private Backyard<small>Mature landscaping</small></div></div>
@@ -631,7 +729,7 @@ footer a:hover { color: white; }
 <script>
 const lbImages = [
   {src:'images/living_room.jpg', alt:'Living Room'},
-  {src:'images/dining_stove.jpg', alt:'Wood Stove'},
+  {src:'images/dining_stove.jpg', alt:'Fireplace'},
   {src:'images/kitchen2.jpg', alt:'Kitchen'},
   {src:'images/kitchen1.jpg', alt:'Kitchen'},
   {src:'images/bath_main.jpg', alt:'Main Bath'},
